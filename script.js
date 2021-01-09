@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    $('.col-sm').click(function () {
+        console.log("Inside click function")
+        let c = document.getElementById('colors')
+        let color = c.value
+        $(this).css('background-color', color)
+    })
+
     const createNewRow = () => {
         let content = document.querySelector('.content')
         let lastRow = content.lastElementChild
@@ -50,21 +57,22 @@ $(document).ready(function () {
         }
     }
 
-    const selectColors = () => {
-        document.getElementById('colors').addEventListener('change', function () {
-            let c = document.getElementById('colors')
-            let color = c.value
-            // create function here??
-
-        })
-    }
+    /*     const selectColors = () => {
+            document.getElementById('colors').addEventListener('change', function () {
+    
+                // create function here??
+                // event listener to check if div was clicked
+                console.log("Inside select colors")
+                console.log(color)
+            })
+        } */
 
     createNewRow()
     createNewCol()
     removeRow()
     removeCol()
-    let myColor = selectColors()
-    // console.log("This is my color: " + myColor)
+    //selectColors()
+
 
 
 })
