@@ -19,7 +19,6 @@ function createNewRow() {
 }
 
 function createNewCol() {
-    let content = document.querySelector('.content')
     // get all the rows and convert to an array
     let allRows = document.querySelectorAll('.row')
     console.log(allRows)
@@ -33,5 +32,12 @@ function createNewCol() {
     })
 }
 
+function removeRow() {
+    let content = document.querySelector('.content')
+    let lastRow = content.lastElementChild
+    lastRow.remove()
+}
+
 createNewRow()
 createNewCol()
+removeRow()
