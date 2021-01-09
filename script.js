@@ -1,4 +1,4 @@
-function createNewRow() {
+const createNewRow = () => {
     let content = document.querySelector('.content')
     let lastRow = content.lastElementChild
     let numCols = lastRow.childElementCount
@@ -18,12 +18,11 @@ function createNewRow() {
     }
 }
 
-function createNewCol() {
+const createNewCol = () => {
     // get all the rows and convert to an array
     let allRows = document.querySelectorAll('.row')
-    console.log(allRows)
     allRows = Array.from(allRows)
-    console.log(Array.isArray(allRows))
+
     // for each element in the allRows array, append a col child
     allRows.forEach(element => {
         let newCol = document.createElement('div')
@@ -32,12 +31,26 @@ function createNewCol() {
     })
 }
 
-function removeRow() {
+const removeRow = () => {
     let content = document.querySelector('.content')
     let lastRow = content.lastElementChild
     lastRow.remove()
 }
 
+const removeCol = () => {
+    let allRows = $('.row')
+
+    for (let i = 0; i < allRows.length; i++) {
+        console.log(allRows[i])
+        let lastElement = allRows[i].lastElementChild
+        lastElement.remove()
+
+    }
+}
+
+
+
 createNewRow()
 createNewCol()
 removeRow()
+removeCol()
