@@ -5,6 +5,20 @@ $(document).ready(function () {
         let c = document.getElementById('colors')
         let color = c.value
         $(this).css('background-color', color)
+        console.log($(this).addClass(color).removeClass('white'))
+
+    })
+
+    $('.fill-all-btn').click(function () {
+        console.log("fill all button clicked")
+        let c = document.getElementById('fill-all')
+        let color = c.value
+        $('.row').children().each(function () {
+            if ($(this).hasClass('white')) {
+                $(this).css('background-color', color)
+                console.log($(this).addClass(color).removeClass('white'))
+            }
+        })
     })
 
     const createNewRow = () => {
@@ -57,22 +71,9 @@ $(document).ready(function () {
         }
     }
 
-    /*     const selectColors = () => {
-            document.getElementById('colors').addEventListener('change', function () {
-    
-                // create function here??
-                // event listener to check if div was clicked
-                console.log("Inside select colors")
-                console.log(color)
-            })
-        } */
-
     createNewRow()
     createNewCol()
     removeRow()
     removeCol()
-    //selectColors()
-
-
 
 })
