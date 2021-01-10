@@ -13,26 +13,27 @@
 <body>
     <div class="container mt-5 content">
         <div class="row">
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
         </div>
 
         <div class="row">
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
         </div>
 
         <div class="row">
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
-            <div class="col-sm border border-dark box"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
 
         </div>
     </div>
 
-    <div class="container select-color">
+    <div class="container">
+        <h6 class=py-2>Select from the following list and click on a box to change the color!</h6>
         <form>
             <label for="colors">Choose a color:</label>
             <select name="colors" id="colors">
@@ -40,9 +41,26 @@
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
                 <option value="pink">Pink</option>
+                <option value="white">White</option>
             </select>
         </form>
     </div>
+
+    <div class="container">
+        <h6 class=py-2>Select a color and it will change all the white boxes to the color</h6>
+        <form>
+            <label for="fill-all">Choose a color:</label>
+            <select name="fill-all" id="fill-all">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="pink">Pink</option>
+            </select>
+            <button type="button" class='fill-all-btn'>Fill All!</button>
+        </form>
+    </div>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
