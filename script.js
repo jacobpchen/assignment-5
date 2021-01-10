@@ -5,19 +5,25 @@ $(document).ready(function () {
         let c = document.getElementById('colors')
         let color = c.value
         $(this).css('background-color', color)
-        console.log($(this).addClass(color).removeClass('white'))
+        $(this).addClass(color).removeClass('white')
+    })
 
+    $('.fill-all-white-boxes-btn').click(function () {
+        console.log("fill-all-white-boxes clicked")
+        let c = document.getElementById('fill-all-white-boxes')
+        $('.row').children().each(function () {
+            if ($(this).hasClass('white')) {
+                $(this).css('background-color', c.value)
+                console.log($(this).addClass(c.value).removeClass('white'))
+            }
+        })
     })
 
     $('.fill-all-btn').click(function () {
         console.log("fill all button clicked")
         let c = document.getElementById('fill-all')
-        let color = c.value
         $('.row').children().each(function () {
-            if ($(this).hasClass('white')) {
-                $(this).css('background-color', color)
-                console.log($(this).addClass(color).removeClass('white'))
-            }
+            $(this).css('background-color', c.value)
         })
     })
 

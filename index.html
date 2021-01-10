@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container d-flex flex-column">
         <h6 class=py-2>Select from the following list and click on a box to change the color!</h6>
         <form>
             <label for="colors">Choose a color:</label>
@@ -47,7 +47,21 @@
     </div>
 
     <div class="container">
-        <h6 class=py-2>Select a color and it will change all the white boxes to the color</h6>
+        <h6 class=py-2>Select a color and it will change all the <b>white</b> boxes to the color</h6>
+        <form>
+            <label for="fill-all-white-boxes">Choose a color:</label>
+            <select name="fill-all-white-boxes" id="fill-all-white-boxes">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="pink">Pink</option>
+            </select>
+            <button type="button" class='fill-all-white-boxes-btn'>Fill all white boxes</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h6 class=py-2>Select a color and it will change ALL the boxes to the color</h6>
         <form>
             <label for="fill-all">Choose a color:</label>
             <select name="fill-all" id="fill-all">
@@ -56,11 +70,13 @@
                 <option value="green">Green</option>
                 <option value="pink">Pink</option>
             </select>
-            <button type="button" class='fill-all-btn'>Fill All!</button>
+            <button type="button" class='fill-all-btn'>Fill all boxes</button>
         </form>
     </div>
 
-
+    <div class="container d-flex flex-row-reverse">
+        <button class="my-3" onClick="window.location.reload();">Reset Page</button>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
