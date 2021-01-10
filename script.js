@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     // Click on a box to change the color 
     $('.col-sm').click(function () {
         console.log("Inside click function")
@@ -29,7 +31,7 @@ $(document).ready(function () {
         })
     })
 
-    // mouseover
+    // Click down and drag to color
     let isDown = false
     $(document).mousedown(function () {
         isDown = true
@@ -44,8 +46,8 @@ $(document).ready(function () {
         }
     })
 
-
-    const createNewRow = () => {
+    // Add a row
+    $('.add-row').click(createNewRow = () => {
         let content = document.querySelector('.content')
         let lastRow = content.lastElementChild
         let numCols = lastRow.childElementCount
@@ -60,12 +62,13 @@ $(document).ready(function () {
 
         for (let i = 0; i < numCols; i++) {
             let newBox = document.createElement('div')
-            newBox.classList.add('col-sm', 'box', 'border', 'border-dark')
+            newBox.classList.add('col-sm', 'box', 'border', 'border-dark', 'white')
             lastRow.appendChild(newBox)
         }
-    }
+    })
 
-    const createNewCol = () => {
+    // Add a col
+    $('.add-col').click(createNewCol = () => {
         // get all the rows and convert to an array
         let allRows = document.querySelectorAll('.row')
         allRows = Array.from(allRows)
@@ -73,31 +76,27 @@ $(document).ready(function () {
         // for each element in the allRows array, append a col child
         allRows.forEach(element => {
             let newCol = document.createElement('div')
-            newCol.classList.add('col-sm', 'box', 'border', 'border-dark')
+            newCol.classList.add('col-sm', 'box', 'border', 'border-dark', 'white')
             element.appendChild(newCol)
         })
-    }
+    })
 
-    const removeRow = () => {
+    // Delete a row
+    $('.del-row').click(removeRow = () => {
+        console.log("delete row clicked")
         let content = document.querySelector('.content')
         let lastRow = content.lastElementChild
         lastRow.remove()
-    }
+    })
 
-    const removeCol = () => {
+    // Delete a col
+    $('.del-col').click(removeCol = () => {
         let allRows = $('.row')
-
         for (let i = 0; i < allRows.length; i++) {
             console.log(allRows[i])
             let lastElement = allRows[i].lastElementChild
             lastElement.remove()
-
         }
-    }
-
-    createNewRow()
-    createNewCol()
-    removeRow()
-    removeCol()
+    })
 
 })
