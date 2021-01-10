@@ -1,13 +1,14 @@
 $(document).ready(function () {
 
+    // Click on a box to change the color 
     $('.col-sm').click(function () {
         console.log("Inside click function")
         let c = document.getElementById('colors')
-        let color = c.value
-        $(this).css('background-color', color)
-        $(this).addClass(color).removeClass('white')
+        $(this).css('background-color', c.value)
+        $(this).addClass(c.value).removeClass('white')
     })
 
+    // Click on the button to fill all white boxes to the selected color
     $('.fill-all-white-boxes-btn').click(function () {
         console.log("fill-all-white-boxes clicked")
         let c = document.getElementById('fill-all-white-boxes')
@@ -19,6 +20,7 @@ $(document).ready(function () {
         })
     })
 
+    // Click on the button to fill ALL boxes to the selected color
     $('.fill-all-btn').click(function () {
         console.log("fill all button clicked")
         let c = document.getElementById('fill-all')
@@ -26,6 +28,22 @@ $(document).ready(function () {
             $(this).css('background-color', c.value)
         })
     })
+
+    // mouseover
+    let isDown = false
+    $(document).mousedown(function () {
+        isDown = true
+    }).mouseup(function () {
+        isDown = false
+    })
+
+    $('.col-sm').mouseover(function () {
+        if (isDown) {
+            let c = document.getElementById('drag-and-fill')
+            $(this).css('background-color', c.value)
+        }
+    })
+
 
     const createNewRow = () => {
         let content = document.querySelector('.content')
